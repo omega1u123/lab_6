@@ -187,3 +187,11 @@ fun AppDrawer(
 
     }
 }
+
+@Preview
+@Composable
+fun AppDrawerPreview(){
+    JetNotesTheme {
+        AppDrawer(Screen.Notes,{})
+    }
+}
