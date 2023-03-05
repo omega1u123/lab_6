@@ -108,3 +108,16 @@ private fun ScreenNavigationButton(
     }
 
 }
+
+@Preview
+@Composable
+fun ScreenNavigationButtonPreview(){
+    JetNotesTheme {
+        ScreenNavigationButton(
+            icon = Icons.Filled.Home ,
+            label = "Заметки" ,
+            isSelected = true,
+            onCLick = {}
+            )
+        }
+    }
