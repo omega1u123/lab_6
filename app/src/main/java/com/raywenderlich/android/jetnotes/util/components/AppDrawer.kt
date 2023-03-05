@@ -154,3 +154,36 @@ fun LightDarkThemeItemPreview(){
         LightDarkThemeItem()
     }
 }
+
+@Composable
+fun AppDrawer(
+    currentScreen: Screen,
+    closeDrawerAction: () -> Unit
+){
+    Column(modifier = Modifier.fillMaxSize()){
+        AppDrawerHeader()
+
+        Divider(color = MaterialTheme.colors.onSurface.copy(alpha = .2f))
+
+        ScreenNavigationButton(
+            icon = Icons.Filled.Home ,
+            label = "Заметки" ,
+            isSelected = currentScreen == Screen.Notes,
+            onCLick = {
+                JetNotesRouter.navigateTo(Screen.Notes)
+                closeDrawerAction()
+            }
+        )
+        ScreenNavigationButton(
+            icon = Icons.Filled.Delete ,
+            label = "Корзина" ,
+            isSelected = currentScreen == Screen.Trash,
+            onCLick = {
+                JetNotesRouter.navigateTo(Screen.Trash)
+                closeDrawerAction()
+            }
+        )
+        LightDarkThemeItem()
+
+    }
+}
