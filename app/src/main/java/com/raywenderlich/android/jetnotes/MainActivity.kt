@@ -12,6 +12,7 @@ import com.raywenderlich.android.jetnotes.routing.Screen
 import com.raywenderlich.android.jetnotes.theme.JetNotesTheme
 import com.raywenderlich.android.jetnotes.util.components.AppDrawer
 import com.raywenderlich.android.jetnotes.util.components.Note
+import com.raywenderlich.android.jetnotes.util.components.screens.NoteScreen
 import com.raywenderlich.android.jetnotes.viewmodel.MainViewModel
 import com.raywenderlich.android.jetnotes.viewmodel.MainViewModelFactory
 import kotlinx.coroutines.launch
@@ -33,7 +34,8 @@ class MainActivity : AppCompatActivity() {
 
     setContent {
       JetNotesTheme {
-        val coroutineScope = rememberCoroutineScope()
+        NoteScreen(viewModel = viewModel)
+        /*val coroutineScope = rememberCoroutineScope()
         val scaffoldState: ScaffoldState = rememberScaffoldState()
 
         Scaffold(
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             Note()
           }
         )
-      }
+      */}
     }
   }
 }
