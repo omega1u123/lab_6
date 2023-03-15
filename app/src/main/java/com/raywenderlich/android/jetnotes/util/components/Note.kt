@@ -1,11 +1,9 @@
 package com.raywenderlich.android.jetnotes.util.components
 
-import android.graphics.drawable.shapes.Shape
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.raywenderlich.android.jetnotes.R
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -13,14 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.raywenderlich.android.jetnotes.domain.model.NoteModel
-import com.raywenderlich.android.jetnotes.theme.rwGreen
 import com.raywenderlich.android.jetnotes.util.fromHex
 
 
@@ -28,7 +24,7 @@ import com.raywenderlich.android.jetnotes.util.fromHex
 fun Note(
     note: NoteModel,
     onNoteClick: (NoteModel) -> Unit = {},
-    onNoteCheckedChange:(NoteModel) -> Unit = {}
+    onNoteCheckedChange:(NoteModel) -> Unit = {},
 ) {
     val backgroundShape: RoundedCornerShape = RoundedCornerShape(4.dp)
     Row(
@@ -96,6 +92,7 @@ private fun NotePreview(){
             "Заметка",
             "Содержимое",
             null
+
         )
 )
 }
