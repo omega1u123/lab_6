@@ -2,14 +2,13 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
   id 'kotlin-kapt'
-    id 'org.jetbrains.kotlin.android'
 }
 
 android {
   compileSdkVersion 31
   buildToolsVersion "30.0.2"
 
-    defaultConfig {
+  defaultConfig {
     applicationId "com.raywenderlich.android.jetnotes"
 
     minSdkVersion 21
@@ -48,7 +47,6 @@ android {
     kotlinCompilerVersion kotlin_version
     kotlinCompilerExtensionVersion compose_version
   }
-    namespace 'com.raywenderlich.android.jetnotes'
 }
 
 dependencies {
@@ -79,11 +77,15 @@ dependencies {
 
   // Room
   implementation "androidx.room:room-runtime:2.2.6"
-    kapt "androidx.room:room-compiler:2.2.6"
+  testImplementation 'junit:junit:4.12'
+  kapt "androidx.room:room-compiler:2.2.6"
 
   // Coroutines
   implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
-  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0-alpha01"
+  implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+  implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0"
+  implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
